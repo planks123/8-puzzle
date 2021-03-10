@@ -22,7 +22,7 @@ class Solver:
     openset.add(self.initial_state)
     closed = set()
     moves = 0
-    print 'tentando resolver:'
+    print ('simba resolver:')
     print openset.peek(), '\n\n'
     start = time.time()
     while openset:
@@ -34,8 +34,8 @@ class Solver:
         for state in reversed(path):
           print state
           print
-        print 'resolvido com %d movimentos' % len(path)
-        print 'encontrei a solução em %2.f segundos' % float(end - start)
+        print('resolvido com %d movimentos' % len(path))
+        print ('encontrei a solução em %2.f segundos' % float(end - start))
         break
       moves += 1
       for state in current.possible_moves(moves):
@@ -43,7 +43,7 @@ class Solver:
           openset.add(state)
       closed.add(current)
     else:
-      print 'não consegui solucionar!'
+      print ('its oky!')
 
 
 class State:
